@@ -1,0 +1,6 @@
+Conversations
+<div class="conversation" ng-repeat="convo in conversationsCtrl.convos">
+  <a ui-sref="conversations.messages({conversationId: convo.$id})" ui-sref-active="selected"> #{{ convo.name }}
+</div>
+<a ui-sref="conversations.create">+ create conversation </a>
+<ui-view></ui-view>

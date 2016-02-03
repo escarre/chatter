@@ -2,31 +2,26 @@
 <html>
 <head>
 
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!-- ui-router -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.17/angular-ui-router.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
 
-<script src="bower_components/angular/angular.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
-<script src="https://cdn.firebase.com/libs/angularfire/0.9.2/angularfire.min.js"></script>
-
-<script src="chatter.js"></script>
+<script src="app.js"></script>
+<script src="conversations/conversations.controller.js"></script>
+<script src="conversations/conversations.js"></script>
+<script src="messages/messages.js"></script>
+<script src="messages/messages.controller.js"></script>
 
 </head>
-<body ng-app="chatter">
-  <div ng-controller="chat">
-    <div>
-      <h1>Message Display</h1>
-      <ul>
-        <li ng-repeat="message in messages">
-       {{message.user}} says {{message.text}}
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h1>Add messages</h1>
-      <p>Name : <input type="text" ng-model="newmessage.user"></p>
-      <p>Message :<input type="text" ng-model="newmessage.text"></p>
-      <button ng-click="send(newmessage)">Send</button>
+<body ng-app="app">
+  Index!
 
-    </div>
-  </div>
+  <div ui-view></div>
+
 </body>
 </html>
