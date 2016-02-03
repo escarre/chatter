@@ -1,0 +1,12 @@
+{
+  "name": "angular-chatter",
+  "description": "A small angular chat app using firebase",
+  "version": "0.0.0",
+  "homepage": "https://github.com/escarre/chatter",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "bootstrap": "~3.1.1"
+  }
+}
