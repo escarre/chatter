@@ -1,2 +1,11 @@
-<h1>loaded</h1>
-{{messagesCtrl.convoName}}
+<h3>{{messagesCtrl.convoName}}</h3>
+
+<div ng-repeat="msg in messagesCtrl.messages">
+  {{msg.user}} says {{msg.body}}
+</div>
+
+<form ng-submit="messagesCtrl.send()">
+  <input type="text" ng-model="messagesCtrl.message.user" placeholder="What's your name?" class="form-control">
+  <input type="text" ng-model="messagesCtrl.message.body" placeholder="Write a message..." class="form-control">
+  <button class="huge ui circular icon button" id="search-button-circle" type="submit">Send!</button>
+</form>

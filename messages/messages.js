@@ -5,6 +5,14 @@ angular.module('app').service('Messages', ['$firebaseArray', 'FirebaseUrl',
 
      Messages.forConversation = function(convoId){
        return $firebaseArray(ref.child(convoId));
-     }
+     };
+
+    //  Messages.sendMessage = function(messages, message){
+    //    messages.$add({
+    //      user: messagesCtrl.message.user,
+    //      body: messagesCtrl.message,
+    //      timestamp: Firebase.ServerValue.TIMESTAMP
+    //    })
+    //  };
 
 	}]);
