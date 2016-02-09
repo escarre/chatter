@@ -1,6 +1,10 @@
-<h2>Conversations</h2>
-<div class="conversation" ng-repeat="convo in conversationsCtrl.convos">
-  <a ui-sref="conversations.messages({conversationId: convo.$id})" ui-sref-active="selected"> #{{ convo.name }}
+<h4>Conversations</h4>
+<div class="sidebar col-sm-3">
+  <div class="conversation" ng-repeat="convo in conversationsCtrl.convos">
+    <a ui-sref="conversations.messages({conversationId: convo.$id})" ui-sref-active="selected"> # {{ convo.name }}
+  </div>
+  <a ui-sref="conversations.create">+ create conversation </a>
 </div>
-<a ui-sref="conversations.create">+ create conversation </a>
-<ui-view></ui-view>
+<div class="col-sm-9">
+  <ui-view></ui-view>
+</div>
