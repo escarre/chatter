@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('app')
   .factory('Conversations', ['$firebaseArray', 'FirebaseUrl',
     function($firebaseArray, firebaseUrl) {

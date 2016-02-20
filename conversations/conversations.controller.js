@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('app')
   .controller('ConversationsCtrl', function(conversations) {
   	var conversationsCtrl = this;
@@ -5,9 +7,11 @@ angular.module('app')
     conversationsCtrl.convos = conversations;
 
   	conversationsCtrl.addConvo = function(){
-      conversationsCtrl.convos.$add(conversationsCtrl.newConvo).then(function(ref){
-        $state.go('conversations.messages', {conversationId: ref.key()});
-      });
+      if(conversationsCtrl.newConvo) {
+        conversationsCtrl.convos.$add(conversationsCtrl.newConvo).then(function(ref){
+          $state.go('conversations.messages', {conversationId: ref.key()});
+        });  
+      }
     };
 
     conversationsCtrl.deleteConvo = function(convo) {

@@ -1,8 +1,12 @@
-<h4>Create a conversation</h4>
+<div class="create-panel">
+  <h4>Create a conversation</h4>
+  <form ng-submit="conversationsCtrl.addConvo()">
+    <input type="text" ng-model="conversationsCtrl.newConvo.name" placeholder="Enter conversation name...">
+    <div>
+      <button type="submit">
+        Create conversation
+      </button>
+    </div>
+  </form>
 
-<form ng-submit="conversationsCtrl.addConvo()">
-  <input type="text" ng-model="conversationsCtrl.newConvo.name" placeholder="Enter conversation name...">
-  <button type="submit" >
-    Create conversation
-  </button>
-</form>
+</div>

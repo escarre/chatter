@@ -6,13 +6,9 @@ angular
   'ui.router'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/conversations');
 
   $stateProvider
-    .state('home', {
-      url: '/home',
-      templateUrl: 'home/home.html'
-    })
    .state('conversations', {
       url: '/conversations',
       controller: 'ConversationsCtrl as conversationsCtrl',

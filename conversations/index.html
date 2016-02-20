@@ -1,10 +1,21 @@
-<h4>Conversations</h4>
-<div class="sidebar col-sm-3">
-  <div class="conversation" ng-repeat="convo in conversationsCtrl.convos">
-    <a ui-sref="conversations.messages({conversationId: convo.$id})" ui-sref-active="selected"> # {{ convo.name }}
+<div class="sidebar">
+  <div class="conversation-menu">
+    <h3>ngChatter</h3>
   </div>
-  <a ui-sref="conversations.create">+ create conversation </a>
+  <div class="sidebar-conversations">
+    <div class="conversation-list">
+      <div class="conversation-header">
+        <h4>Conversations</h4>
+      </div>
+      <div class="conversation" ng-repeat="convo in conversationsCtrl.convos">
+        <a ui-sref="conversations.messages({conversationId: convo.$id})" ui-sref-active="selected"> # {{ convo.name }}</a>
+      </div>
+      <div class="conversation create">
+        <a ui-sref="conversations.create"> + create conversation</a>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="col-sm-9">
+<div>
   <ui-view></ui-view>
 </div>

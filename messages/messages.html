@@ -1,11 +1,20 @@
-<h3>{{messagesCtrl.convoName}}</h3>
-
-<div ng-repeat="msg in messagesCtrl.messages">
-  {{msg.user}} says {{msg.body}}
+<div class="message-menu">{{messagesCtrl.convoName}}</div>
+<div class="message-display">
+  <div class="message" ng-repeat="msg in messagesCtrl.messages">
+    <div class="message-username">{{msg.user}}</div>
+    <div class="message-body">{{msg.body}}</div>
+  </div>
 </div>
-
-<form ng-submit="messagesCtrl.send()">
-  <input type="text" ng-model="messagesCtrl.message.user" placeholder="What's your name?" class="form-control">
-  <input type="text" ng-model="messagesCtrl.message.body" placeholder="Write a message..." class="form-control">
-  <button class="huge ui circular icon button" id="search-button-circle" type="submit">Send!</button>
-</form>
+<div class="footer">
+  <div class="user-menu">
+    <form ng-show="!messagesCtrl.hasUser" ng-submit="messagesCtrl.setUserName()">
+      <input type="text" class="input-box-text" ng-model="messagesCtrl.user" placeholder="What's your name?">
+    </form>
+    <div class="user-menu-username" ng-show="messagesCtrl.hasUser">{{messagesCtrl.user}}</div>
+  </div>
+  <div class="input-box">
+    <form ng-show="messagesCtrl.hasUser" ng-submit="messagesCtrl.send()">
+      <input type="text" class="input-box-text" ng-model="messagesCtrl.message.body" placeholder="Write a message...">
+    </form>
+  </div>
+</div>

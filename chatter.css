@@ -1,65 +1,196 @@
+html {
+  position: relative;
+  height: 100%;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
 body {
-  padding-top: :30px;
-  padding-bottom: :30px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  /*padding-top: 50px;
+  padding-bottom: 60px;*/
 }
 
-/* Custom page header */
-.header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
+.container {
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+
 }
 
-/* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 64px;
+  width: 100%;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
+.sidebar {
+  height: 100%;
+  width: 220px;
+  float: left;
+  color: #ab9ba9;
+  background-color: #4d394b;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+.sidebar-conversations {
+  margin: 1rem 0 2rem;
 }
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
+
+.conversation-menu {
+  position: relative;
+  width: 220px;
+  height: 53px;
+  font-weight: 900;
+  padding: 0 1rem;
+  color: #ffffff;
+  background: #3e313c;
+  border-bottom: 2px solid #372c36;
+  float: left;
+  cursor: pointer;
+}
+.message-menu {
+  display: inline-block;
+  padding: 0 .5rem 0 1.5rem;
+  color: #555459;
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 53px;
+  cursor: pointer;
+}
+
+.conversation-header {
+  padding-top: 30px;
+  text-align: left;
+  line-height: 1.25rem;
+  margin: 0 1rem .1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ab9ba9;
+  width: 165px;
+  position: relative;
+}
+
+.conversation-list a {
+  text-align: left;
+  color: #ab9ba9;
 }
 
 .conversation {
-  a {
-    color: #ffffff;
-    text-decoration: none;
-  }
+  height: 24px;
+  line-height: 24px;
+  -moz-border-radius-topright: 0.25rem;
+  -webkit-border-top-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  -moz-border-radius-bottomright: 0.25rem;
+  -webkit-border-bottom-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-right: 17px;
+  padding-left: 1rem;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
+.conversation.create {
+  padding-bottom: 40px;
+  padding-top: 5px;
+  border-top: 1px solid #3E313C;
+  margin-top: 10px;
+}
+
+.conversation a {
+  color: #ffffff;
+}
+
+.message-display {
+  margin-left: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  padding: 0 18px 1rem 1.5rem;
+}
+
+.message {
+  position: relative;
+  margin-top: .5rem;
+  padding: .25rem 2rem .1rem 0rem;
+  min-height: 36px;
+}
+
+.message.message-username {
+  font-weight: 900;
+  padding-right: .25rem;
+  color: #3d3c40 !important;
+  margin-left: 0;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.message-body {
+  color: #8b898f;
+  font-style: italic;
+  display: block;
+  min-height: 1rem;
+}
+
+.input-box {
+  height: 100%;
+  margin-left: 220px;
+}
+
+/* line 6, ../tests/sass/components/_input-box.scss */
+.input-box-text {
+  font-size: .95rem;
+  width: 90%;
+  margin-left: 2%;
+  margin-bottom: auto;
+  line-height: 1.2rem;
+  border: 2px solid #e0e0e0;
+  -webkit-border-radius: 0.2rem;
+  border-radius: 0.2rem;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  color: #3d3c40;
+  -webkit-appearance: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+  bottom: 0;
+  min-height: 25px !important;
+  padding: 9px 5px 9px 8px;
+}
+
+.create-panel {
+  max-width: 550px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 220px;
+  text-align: center;
+}
+
+.user-menu {
+  float: left;
+  width: 220px;
+  height: 100%;
+  cursor: pointer;
+  background: #3e313c;
+  border-top: 2px solid #372c36;
+  height: 4rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.user-menu-username {
+  display: block;
+  color: #ffffff;
+  font-weight: 900;
+  line-height: 1.5rem;
+  margin-top: .2rem;
+  max-width: 120px;
 }
