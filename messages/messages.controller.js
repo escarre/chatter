@@ -2,7 +2,7 @@
 
 angular.module('app')
   .controller('MessagesCtrl', function(convoName, messages) {
-  	var messagesCtrl = this;
+    var messagesCtrl = this;
 
     messagesCtrl.convoName = convoName;
     messagesCtrl.messages = messages;
@@ -11,20 +11,20 @@ angular.module('app')
     messagesCtrl.hasUser = false;
 
     //todo: auth with firebase; in the meantime, set user's name here
-    messagesCtrl.setUserName = function(){
-      if(messagesCtrl.user){
+    messagesCtrl.setUserName = function() {
+      if (messagesCtrl.user) {
         messagesCtrl.hasUser = true;
       }
     };
     // Send Messages
-    messagesCtrl.send = function(message){
+    messagesCtrl.send = function(message) {
       debugger;
-      if(messagesCtrl.message) {
+      if (messagesCtrl.message) {
         messagesCtrl.messages.$add({
           user: messagesCtrl.user,
           body: messagesCtrl.message.body,
           timestamp: Firebase.ServerValue.TIMESTAMP
-        }).then(function(){
+        }).then(function() {
           messagesCtrl.message = {};
         })
       }
